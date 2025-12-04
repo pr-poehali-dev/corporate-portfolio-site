@@ -26,8 +26,8 @@ const Index = () => {
             <span className="font-heading text-xl font-bold text-primary">Анна Усикова</span>
             <div className="hidden md:flex gap-6">
               <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">Обо мне</a>
-              <a href="#story" className="text-muted-foreground hover:text-primary transition-colors">История</a>
-              <a href="#match" className="text-muted-foreground hover:text-primary transition-colors">Совпадение</a>
+              <a href="#story" className="text-muted-foreground hover:text-primary transition-colors">Моя история</a>
+              <a href="#match" className="text-muted-foreground hover:text-primary transition-colors">Почему я?</a>
               <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Контакты</a>
             </div>
           </div>
