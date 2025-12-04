@@ -10,18 +10,18 @@ const Index = () => {
         
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
           <div className="text-center lg:text-left space-y-6">
-            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-medium text-sm mb-4">
-              Менеджер корпоративных программ развития
+            <div className="mb-6">
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">
+                Менеджер корпоративных программ развития
+              </h2>
             </div>
             
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-primary leading-tight">
-              Привет! 👋<br />
-              Я создаю системы,<br />
-              <span className="text-secondary">которые работают</span>
+            <h1 className="font-heading text-2xl sm:text-3xl lg:text-3xl font-normal text-primary leading-relaxed">
+              Привет! Меня зовут Анна.
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-2xl">
-              Превращаю хаос в порядок, а идеи — в работающие процессы развития персонала
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+              Когда я читала вашу вакансию, у меня возникло то самое чувство уверенности и вдохновения, которое бывает, когда находишь не просто работу, а свое место. За формальными требованиями я увидела ценности, близкие мне, и задачи, для решения которых у меня есть не только опыт, но и внутренний огонь.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
