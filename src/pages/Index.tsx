@@ -39,9 +39,9 @@ const Index = () => {
           <div className="relative animate-slide-in-right">
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-secondary/20 rounded-3xl blur-3xl"></div>
             <img 
-              src="https://cdn.poehali.dev/projects/8182d801-7077-4c9c-9f14-32ea61a3c087/files/a1497b14-f766-41ac-852d-00ba19d956b0.jpg"
-              alt="Профессиональное фото"
-              className="relative rounded-3xl shadow-2xl w-full max-w-lg mx-auto"
+              src="https://cdn.poehali.dev/files/d8c3f017-0a04-48c7-9909-8ac10ffac70b.jpg"
+              alt="Менеджер корпоративных программ развития"
+              className="relative rounded-3xl shadow-2xl w-full max-w-lg mx-auto object-cover"
             />
           </div>
         </div>
