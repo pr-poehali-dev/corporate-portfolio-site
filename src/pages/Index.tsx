@@ -188,57 +188,147 @@ const Index = () => {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
         </div>
         
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-6 text-white">
               Почему мы подходим друг другу?
             </h2>
-            <p className="text-xl text-white/80">
-              Вот что я могу принести в вашу команду
-            </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: "Brain",
-                title: "Системное мышление",
-                desc: "Вижу картину целиком: от стратегии до конкретных метрик. Не просто запускаю программы, а встраиваю их в бизнес-процессы."
-              },
-              {
-                icon: "Zap",
-                title: "Быстрое внедрение",
-                desc: "Умею делать MVP и тестировать гипотезы. Не трачу годы на планирование — запускаю, измеряю, улучшаю."
-              },
-              {
-                icon: "Users2",
-                title: "Эмпатия к людям",
-                desc: "Путь от техподдержки научил слышать настоящие потребности. Создаю программы, которые действительно нужны сотрудникам."
-              },
-              {
-                icon: "TrendingUp",
-                title: "Фокус на результат",
-                desc: "Говорю на языке бизнеса: ROI, метрики эффективности, влияние на ключевые показатели компании."
-              },
-              {
-                icon: "Lightbulb",
-                title: "Инновации в обучении",
-                desc: "Использую современные форматы: микрообучение, геймификацию, адаптивные треки развития."
-              },
-              {
-                icon: "Shield",
-                title: "Надёжность",
-                desc: "95% успешных проектов. Умею работать с ограничениями, дедлайнами и меняющимися приоритетами."
-              }
-            ].map((reason, idx) => (
-              <Card key={idx} className="p-6 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 animate-fade-in hover:scale-105">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-4">
-                  <Icon name={reason.icon} className="text-white" size={24} />
-                </div>
-                <h3 className="font-heading text-xl font-bold mb-3 text-white">{reason.title}</h3>
-                <p className="text-white/80 leading-relaxed">{reason.desc}</p>
-              </Card>
-            ))}
+          <div className="space-y-8">
+            <Card className="p-8 bg-white border-2">
+              <h3 className="font-heading text-3xl font-bold text-primary mb-6 flex items-center gap-3">
+                <Icon name="Target" className="text-accent" size={32} />
+                Соответствие опыту
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Ваши ключевые задачи — моя ежедневная практика. Я не теоретик, а практик, который создаёт системы развития «под ключ».
+              </p>
+              
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-accent">
+                      <th className="text-left p-4 font-heading text-lg text-primary">Что ищете вы</th>
+                      <th className="text-left p-4 font-heading text-lg text-primary">Что уже делала я</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      {
+                        need: "Разработка и реализация программ обучения для бизнес-единиц",
+                        experience: "Выстраивала стратегию обучения с нуля в международной компании (Janus Worldwide), создавала комплексные программы (например, «Лента Форвард» для линейных руководителей федеральной сети)."
+                      },
+                      {
+                        need: "Организация командных сессий и фасилитация",
+                        experience: "Регулярно проводила стратегические сессии, воркшопы и ретроспективы в «Ленте» и других компаниях, консультировала экспертов по самостоятельному ведению таких форматов."
+                      },
+                      {
+                        need: "Создание онлайн-курсов как методолог",
+                        experience: "Самостоятельно разрабатывала электронные курсы в iSpring Suite, внедряла и администрировала LMS (Mirapolis, Moodle), управляла наполнением платформ."
+                      },
+                      {
+                        need: "Интеграция ИИ-инструментов в обучение",
+                        experience: "Целенаправленно изучаю тему ИИ и внедряю лучшие инструменты в свою работу."
+                      },
+                      {
+                        need: "Работа в ИТ-среде, понимание проектной работы",
+                        experience: "Работала в ИТ-консалтинге («Кодекс Консорциум»), сопровождала адаптацию IT-специалистов, понимаю циклы и боли проектной работы."
+                      }
+                    ].map((row, idx) => (
+                      <tr key={idx} className="border-b border-muted hover:bg-muted/30 transition-colors">
+                        <td className="p-4 text-muted-foreground align-top">{row.need}</td>
+                        <td className="p-4 text-muted-foreground align-top">{row.experience}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="mt-6 p-4 bg-accent/10 rounded-lg">
+                <p className="text-base text-primary font-semibold">
+                  <Icon name="Award" className="inline text-accent mr-2" size={20} />
+                  Мой фундамент: 19 лет в L&D от тренера колл-центра до руководителя направления. Я прошла путь от помощи коллегам справляться со стрессом до построения общекорпоративных систем развития.
+                </p>
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white border-2 animate-fade-in delay-100">
+              <h3 className="font-heading text-3xl font-bold text-primary mb-6 flex items-center gap-3">
+                <Icon name="Heart" className="text-accent" size={32} />
+                Совпадение ключевых ценностей
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Я верю, что долгосрочный успех строится на ценностном совпадении. В описании вашей компании и вакансии я увидела не просто требования, а ценности, которые разделяю:
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: "MessageSquare",
+                    text: "Когда вы пишете про открытую культуру и минимум бюрократии — я вспоминаю, как сама внедряла портал в одной компании, чтобы наладить эффективную коммуникацию и упростить жизнь коллегам. Я верю в работу, которая приносит радость, а не в отчёты ради отчётов."
+                  },
+                  {
+                    icon: "Users",
+                    text: "Когда вы говорите про развитие и менторство — я думаю о своих учениках, которых готовила в «Ленте» и «Альфа-Банке». Многие из них теперь сами возглавляют отделы. Это самая большая профессиональная гордость."
+                  },
+                  {
+                    icon: "Coffee",
+                    text: "Когда вы упоминаете волейбол, бег и экологические программы — мне становится тепло. Для меня команда — это не просто коллеги по проектам. Это люди, с которыми можно после работы побегать в парке или устроить душевные посиделки."
+                  }
+                ].map((value, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
+                    <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name={value.icon} className="text-accent" size={20} />
+                    </div>
+                    <p className="text-base text-muted-foreground leading-relaxed">{value.text}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="p-8 bg-white border-2 animate-fade-in delay-200">
+              <h3 className="font-heading text-3xl font-bold text-primary mb-6 flex items-center gap-3">
+                <Icon name="Sparkles" className="text-accent" size={32} />
+                Особый подход к работе
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Помимо опыта и ценностей, я принесу с собой то, что сложно вписать в резюме, но важно для эффективной совместной работы:
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    number: "1",
+                    title: "Умею слушать сердцем, а анализировать головой",
+                    desc: "Я начинаю любой проект с вопросов и диалога. Моя история в колл-центре научила меня слышать не только слова, но и эмоции, скрытые потребности. Это помогает создавать программы, которые попадают точно в цель."
+                  },
+                  {
+                    number: "2",
+                    title: "Тёплая поддержка и создание безопасной среды",
+                    desc: "Люди лучше всего учатся там, где им не страшно ошибаться. Я умею создавать такую атмосферу — и на стратегической сессии с топ-менеджерами, и на воркшопе для новичков. Обучение через радость и увлечённость — самый эффективный путь."
+                  },
+                  {
+                    number: "3",
+                    title: "Системное видение с человеческим лицом",
+                    desc: "Я вижу связь между запуском программы обучения, пульс-опросами вовлечённости и снижением текучести. Мне важно, чтобы наша работа приносила измеримую пользу бизнесу, но никогда не забывала о человеке в центре всех этих процессов."
+                  },
+                  {
+                    number: "4",
+                    title: "Энергия соавторства",
+                    desc: "Я ищу не просто позицию, а команду, с которой можно вместе строить, творить и расти. Готова быть не просто исполнителем, а вашим партнёром в развитии самого главного актива — людей!"
+                  }
+                ].map((approach, idx) => (
+                  <div key={idx} className="p-6 bg-gradient-to-br from-accent/5 to-secondary/5 rounded-lg border border-accent/20 hover:border-accent transition-all">
+                    <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-heading text-2xl font-bold mb-4">
+                      {approach.number}
+                    </div>
+                    <h4 className="font-heading text-lg font-bold text-primary mb-3">{approach.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{approach.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
           </div>
         </div>
       </section>
