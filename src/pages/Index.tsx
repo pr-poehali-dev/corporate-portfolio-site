@@ -386,7 +386,7 @@ const Index = () => {
       <footer className="bg-primary text-white py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-white/60">
-            © 2024 Анна Усикова — Менеджер корпоративных программ развития
+            © 2025 Анна Усикова — Менеджер корпоративных программ развития
           </p>
         </div>
       </footer>
