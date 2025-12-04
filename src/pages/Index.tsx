@@ -126,64 +126,58 @@ const Index = () => {
       </section>
 
       <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-6 text-primary">
               Как всё начиналось
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-secondary font-semibold">
               Моя история началась не в кабинете, а на линии поддержки
             </p>
           </div>
           
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-secondary to-primary hidden md:block"></div>
-            
-            <div className="space-y-12">
-              {[
-                {
-                  year: "2017",
-                  title: "С чего началось",
-                  desc: "Первая работа в техподдержке научила меня главному — слушать людей и понимать их настоящие потребности. Каждый звонок был уроком эмпатии.",
-                  icon: "Headphones"
-                },
-                {
-                  year: "2019",
-                  title: "Поворот к развитию",
-                  desc: "Заметил, что большинство проблем клиентов можно решить правильным обучением. Стал создавать обучающие материалы для команды — и это сработало.",
-                  icon: "BookOpen"
-                },
-                {
-                  year: "2021",
-                  title: "Первая программа",
-                  desc: "Разработал и запустил комплексную программу адаптации новых сотрудников. Время адаптации сократилось с 3 месяцев до 6 недель.",
-                  icon: "Rocket"
-                },
-                {
-                  year: "2023-2024",
-                  title: "Масштаб и системность",
-                  desc: "Построил отдел корпоративного обучения с нуля: от найма тренеров до создания LMS. Управлял 15+ программами развития одновременно.",
-                  icon: "Building2"
-                }
-              ].map((milestone, idx) => (
-                <div key={idx} className={`relative pl-0 md:pl-24 animate-slide-in-left delay-${idx * 100}`}>
-                  <div className="absolute left-0 top-0 w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-2xl flex items-center justify-center shadow-lg hidden md:flex">
-                    <Icon name={milestone.icon} className="text-white" size={28} />
-                  </div>
-                  
-                  <Card className="p-6 md:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-accent">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="md:hidden w-12 h-12 bg-gradient-to-br from-accent to-secondary rounded-xl flex items-center justify-center">
-                        <Icon name={milestone.icon} className="text-white" size={20} />
-                      </div>
-                      <span className="font-heading text-2xl font-bold text-accent">{milestone.year}</span>
-                    </div>
-                    <h3 className="font-heading text-2xl font-bold mb-3 text-primary">{milestone.title}</h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">{milestone.desc}</p>
-                  </Card>
+          <div className="space-y-8">
+            <Card className="p-8 border-2 hover:border-accent transition-all duration-300 animate-fade-in delay-100">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="Headphones" className="text-accent" size={28} />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h3 className="font-heading text-2xl font-bold text-primary mb-4">Начало пути</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Ещё в студенчестве я пришла работать оператором в колл-центр «Билайна». Через три месяца меня пригласили стать тренером — потому что я искренне хотела помогать коллегам справляться со сложными звонками, стрессом, выгоранием. Тогда я поняла главное: <span className="font-semibold text-primary">обучение — это про людей.</span> Про то, как дать им уверенность, инструменты и поддержку.
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 border-2 hover:border-accent transition-all duration-300 animate-fade-in delay-200">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="TrendingUp" className="text-secondary" size={28} />
+                </div>
+                <div>
+                  <h3 className="font-heading text-2xl font-bold text-primary mb-4">19 лет опыта</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Эту нить я пронесла через все 19 лет карьеры. Через банк, розничную сеть, IT-компании. Каждое место учило меня чему-то ценному, но суть оставалась той же: <span className="font-semibold text-primary">я люблю зажигать в людях интерес к росту.</span> Видеть, как у коллег загораются глаза, когда они осваивают новый навык. Как руководитель начинает по-другому смотреть на свою команду. Как вся атмосфера в отделе становится светлее и продуктивнее.
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 border-2 border-accent bg-accent/5 transition-all duration-300 animate-fade-in delay-300">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="Sparkles" className="text-white" size={28} />
+                </div>
+                <div>
+                  <h3 className="font-heading text-2xl font-bold text-primary mb-4">Что дальше?</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Мне кажется, что мы сможем создать вместе что-то действительно ценное для вашего <span className="font-semibold text-accent">Корпоративного Университета.</span>
+                  </p>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
