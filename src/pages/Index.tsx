@@ -200,18 +200,20 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-6 text-primary">
-              Давайте обсудим возможности
+              Мои контакты
             </h2>
-            <p className="text-xl text-muted-foreground mb-12">
-              Готов ответить на ваши вопросы и рассказать больше о своём опыте
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              Мне будет искренне интересно услышать ваше видение, обсудить конкретные задачи и кейсы, понять, как мой опыт и ценности могут помочь «КОРУС Консалтинг» стать ещё сильнее.
+            </p>
+            <p className="text-2xl font-heading font-semibold text-primary mb-12">
+              Анна Усикова
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
             {[
-              { icon: "Mail", label: "Email", value: "your.email@example.com", link: "mailto:your.email@example.com" },
-              { icon: "Phone", label: "Телефон", value: "+7 (XXX) XXX-XX-XX", link: "tel:+7XXXXXXXXXX" },
-              { icon: "MessageSquare", label: "Telegram", value: "@yourtelegram", link: "https://t.me/yourtelegram" }
+              { icon: "Mail", label: "Email", value: "annasmail@yandex.ru", link: "mailto:annasmail@yandex.ru" },
+              { icon: "Phone", label: "Телефон", value: "+7 (962) 729-69-15", link: "tel:+79627296915" }
             ].map((contact, idx) => (
               <a 
                 key={idx}
@@ -228,14 +230,18 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in delay-300">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8">
-              <Icon name="Send" size={20} className="mr-2" />
-              Написать мне
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              <Icon name="Linkedin" size={20} className="mr-2" />
-              LinkedIn профиль
-            </Button>
+            <a href="mailto:annasmail@yandex.ru">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8">
+                <Icon name="Send" size={20} className="mr-2" />
+                Написать мне
+              </Button>
+            </a>
+            <a href="tel:+79627296915">
+              <Button size="lg" variant="outline" className="text-lg px-8">
+                <Icon name="Phone" size={20} className="mr-2" />
+                Позвонить
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -243,7 +249,7 @@ const Index = () => {
       <footer className="bg-primary text-white py-8 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-white/60">
-            © 2024 Менеджер корпоративных программ развития
+            © 2024 Анна Усикова — Менеджер корпоративных программ развития
           </p>
         </div>
       </footer>
