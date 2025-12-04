@@ -1,11 +1,40 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <span className="font-heading text-xl font-bold text-primary">Анна Усикова</span>
+            <div className="hidden md:flex gap-6">
+              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">Обо мне</a>
+              <a href="#story" className="text-muted-foreground hover:text-primary transition-colors">История</a>
+              <a href="#match" className="text-muted-foreground hover:text-primary transition-colors">Совпадение</a>
+              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
         
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
@@ -51,7 +80,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-heading text-4xl sm:text-5xl font-bold text-center mb-16 text-primary">
             Обо мне
@@ -125,7 +154,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section id="story" className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-6 text-primary">
@@ -182,7 +211,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-primary/95 to-secondary relative overflow-hidden">
+      <section id="match" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-primary/95 to-secondary relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
@@ -333,7 +362,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <h2 className="font-heading text-4xl sm:text-5xl font-bold mb-6 text-primary">
@@ -390,6 +419,16 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 w-12 h-12 bg-accent text-white rounded-full shadow-lg hover:bg-accent/90 transition-all duration-300 flex items-center justify-center z-50 animate-fade-in hover:scale-110"
+          aria-label="Наверх"
+        >
+          <Icon name="ArrowUp" size={24} />
+        </button>
+      )}
     </div>
   );
 };
