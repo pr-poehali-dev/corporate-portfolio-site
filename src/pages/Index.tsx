@@ -106,13 +106,19 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="relative animate-slide-in-right">
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-secondary/20 rounded-3xl blur-3xl"></div>
-            <img 
-              src="https://cdn.poehali.dev/files/d8c3f017-0a04-48c7-9909-8ac10ffac70b.jpg"
-              alt="Менеджер корпоративных программ развития"
-              className="relative rounded-3xl shadow-2xl w-full max-w-lg mx-auto object-cover"
-            />
+          <div className="relative animate-slide-in-right flex justify-center items-center">
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-secondary/20 blur-3xl" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}></div>
+            <div className="relative overflow-hidden shadow-2xl" style={{ 
+              width: '450px', 
+              height: '550px',
+              borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%'
+            }}>
+              <img 
+                src="https://cdn.poehali.dev/files/d8c3f017-0a04-48c7-9909-8ac10ffac70b.jpg"
+                alt="Менеджер корпоративных программ развития"
+                className="w-full h-full object-cover object-center scale-110"
+              />
+            </div>
           </div>
         </div>
       </section>
