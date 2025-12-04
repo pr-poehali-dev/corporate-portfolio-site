@@ -54,25 +54,74 @@ const Index = () => {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-heading text-4xl sm:text-5xl font-bold text-center mb-16 text-primary">
-            Факты обо мне
+            Обо мне
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
             {[
-              { icon: "Briefcase", title: "7+ лет", desc: "в корпоративном обучении и развитии", delay: "delay-100" },
-              { icon: "Users", title: "500+", desc: "сотрудников прошли мои программы", delay: "delay-200" },
-              { icon: "Target", title: "95%", desc: "успешных внедрений проектов", delay: "delay-300" },
-              { icon: "Award", title: "15+", desc: "корпоративных программ запущено", delay: "delay-[400ms]" }
-            ].map((fact, idx) => (
-              <Card key={idx} className={`p-6 hover:shadow-lg transition-all duration-300 animate-fade-in ${fact.delay} group cursor-pointer border-2 hover:border-accent`}>
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                  <Icon name={fact.icon} className="text-accent group-hover:text-white" size={24} />
+              { icon: "Brain", title: "Психолог, организационный психолог" },
+              { icon: "Users2", title: "Психолог-консультант, коуч в гештальт-подходе" },
+              { icon: "Trophy", title: "Эксперт по развитию лидерского потенциала" }
+            ].map((credential, idx) => (
+              <Card key={idx} className="p-6 hover:shadow-lg transition-all duration-300 animate-fade-in group cursor-pointer border-2 hover:border-accent text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                  <Icon name={credential.icon} className="text-accent group-hover:text-white" size={28} />
                 </div>
-                <h3 className="font-heading text-3xl font-bold text-primary mb-2">{fact.title}</h3>
-                <p className="text-muted-foreground">{fact.desc}</p>
+                <h3 className="font-heading text-lg font-semibold text-primary leading-relaxed">{credential.title}</h3>
               </Card>
             ))}
           </div>
+
+          <Card className="p-8 mb-8 border-2 hover:border-accent transition-all duration-300 animate-fade-in delay-200">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="Building2" className="text-secondary" size={24} />
+              </div>
+              <div>
+                <h3 className="font-heading text-2xl font-bold text-primary mb-3">Опыт в компаниях</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  Опыт в управлении талантами и развитии лидеров — <span className="font-bold text-primary">18+ лет</span> в компаниях от 350 до 49 000 человек.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-4">
+                  {["Лента", "Альфа-Банк", "Helix", "Kodeks", "Билайн", "Газпромтранс"].map((company, idx) => (
+                    <span key={idx} className="px-4 py-2 bg-accent/10 text-accent rounded-full font-medium text-sm">
+                      {company}
+                    </span>
+                  ))}
+                  <span className="px-4 py-2 bg-muted text-muted-foreground rounded-full font-medium text-sm">
+                    и другие
+                  </span>
+                </div>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Создаю и внедряю программы обучения и оценки для лидеров в федеральных компаниях, помогая им достигать самых амбициозных результатов.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-8 border-2 hover:border-accent transition-all duration-300 animate-fade-in delay-300">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="Star" className="text-primary" size={24} />
+              </div>
+              <div>
+                <h3 className="font-heading text-2xl font-bold text-primary mb-4">Ключевые компетенции</h3>
+                <ul className="space-y-3">
+                  {[
+                    "Разработка и проведение программ для руководителей",
+                    "Создание и внедрение моделей компетенций и систем оценки",
+                    "Построение систем кадрового резерва и наставничества",
+                    "Коучинг и сопровождение руководителей"
+                  ].map((competence, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <Icon name="CheckCircle2" className="text-accent flex-shrink-0 mt-1" size={20} />
+                      <span className="text-base text-muted-foreground">{competence}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
