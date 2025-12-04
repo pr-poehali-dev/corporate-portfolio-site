@@ -5,11 +5,28 @@ import { useState, useEffect } from "react";
 
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
+      
+      const sections = ['hero', 'about', 'story', 'match', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+    
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,10 +42,30 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             <span className="font-heading text-xl font-bold text-primary">Анна Усикова</span>
             <div className="hidden md:flex gap-6">
-              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">Обо мне</a>
-              <a href="#story" className="text-muted-foreground hover:text-primary transition-colors">Моя история</a>
-              <a href="#match" className="text-muted-foreground hover:text-primary transition-colors">Почему я?</a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Контакты</a>
+              <a 
+                href="#about" 
+                className={`transition-all duration-300 ${activeSection === 'about' ? 'text-accent font-semibold border-b-2 border-accent' : 'text-muted-foreground hover:text-primary'}`}
+              >
+                Обо мне
+              </a>
+              <a 
+                href="#story" 
+                className={`transition-all duration-300 ${activeSection === 'story' ? 'text-accent font-semibold border-b-2 border-accent' : 'text-muted-foreground hover:text-primary'}`}
+              >
+                Моя история
+              </a>
+              <a 
+                href="#match" 
+                className={`transition-all duration-300 ${activeSection === 'match' ? 'text-accent font-semibold border-b-2 border-accent' : 'text-muted-foreground hover:text-primary'}`}
+              >
+                Почему я?
+              </a>
+              <a 
+                href="#contact" 
+                className={`transition-all duration-300 ${activeSection === 'contact' ? 'text-accent font-semibold border-b-2 border-accent' : 'text-muted-foreground hover:text-primary'}`}
+              >
+                Контакты
+              </a>
             </div>
           </div>
         </div>
