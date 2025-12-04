@@ -25,14 +25,18 @@ const Index = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white">
-                <Icon name="Mail" size={20} className="mr-2" />
-                Связаться со мной
-              </Button>
-              <Button size="lg" variant="outline">
-                <Icon name="FileText" size={20} className="mr-2" />
-                Скачать резюме
-              </Button>
+              <a href="mailto:annasmail@yandex.ru">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-white">
+                  <Icon name="Mail" size={20} className="mr-2" />
+                  Связаться со мной
+                </Button>
+              </a>
+              <a href="#" download="Anna_Usikova_Resume.pdf">
+                <Button size="lg" variant="outline">
+                  <Icon name="Download" size={20} className="mr-2" />
+                  Скачать резюме
+                </Button>
+              </a>
             </div>
           </div>
           
