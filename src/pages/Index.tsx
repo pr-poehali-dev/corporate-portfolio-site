@@ -10,21 +10,21 @@ const Index = () => {
         
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
           <div className="text-center lg:text-left space-y-6">
-            <div className="mb-6">
+            <div className="mb-6 animate-fade-in">
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">
                 Менеджер корпоративных программ развития
               </h2>
             </div>
             
-            <h1 className="font-heading text-2xl sm:text-3xl lg:text-3xl font-normal text-primary leading-relaxed">
+            <h1 className="font-heading text-2xl sm:text-3xl lg:text-3xl font-normal text-primary leading-relaxed animate-fade-in delay-200">
               Привет! Меня зовут Анна.
             </h1>
             
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-in delay-[400ms]">
               Когда я читала вашу вакансию, у меня возникло то самое чувство уверенности и вдохновения, которое бывает, когда находишь не просто работу, а свое место. За формальными требованиями я увидела ценности, близкие мне, и задачи, для решения которых у меня есть не только опыт, но и внутренний огонь.
             </p>
             
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4 animate-fade-in delay-[600ms]">
               <a href="mailto:annasmail@yandex.ru">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-white">
                   <Icon name="Mail" size={20} className="mr-2" />
